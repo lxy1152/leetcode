@@ -7,17 +7,18 @@ import xyz.lixiangyu.template.structure.DisjointSet;
  *
  * <p>
  * 描述:<br>
- * 如果交换字符串X中的两个不同位置的字母, 使得它和字符串Y相等, 那么称X和Y两个字符串相似.
+ * 如果交换字符串{@code X}中的两个不同位置的字母, 使得它和字符串{@code Y}相等, 那么称{@code X}和{@code Y}两个字符串相似.
  * 如果这两个字符串本身是相等的, 那它们也是相似的. <br>
  *
- * 例如, "tars"和"rats"是相似的(交换0与2的位置); "rats"和"arts"也是相似的,
- * 但是"star"不与"tars", "rats", 或"arts"相似. <br>
+ * 例如, {@code "tars"}和{@code "rats"}是相似的(交换0与2的位置); {@code "rats"}和{@code "arts"}也是相似的,
+ * 但是{@code "star"}不与{@code "tars"}, {@code "rats"}, 或{@code "arts"}相似. <br>
  *
- * 总之, 它们通过相似性形成了两个关联组：{"tars", "rats", "arts"} 和 {"star"}.
- * 注意, "tars" 和 "arts" 是在同一组中, 即使它们并不相似.
+ * 总之, 它们通过相似性形成了两个关联组：{@code {"tars", "rats", "arts"}}和{@code {"star"}}.
+ * 注意, {@code "tars"}和{@code "arts"}是在同一组中, 即使它们并不相似.
  * 形式上, 对每个组而言, 要确定一个单词在组中, 只需要这个词和该组中至少一个单词相似.<br>
  *
- * 给你一个字符串列表strs. 列表中的每个字符串都是strs中其它所有字符串的一个字母异位词. 请问strs中有多少个相似字符串组?
+ * 给你一个字符串列表{@code strs}. 列表中的每个字符串都是{@code strs}中其它所有字符串的一个字母异位词.
+ * 请问{@code strs}中有多少个相似字符串组?
  * </p>
  *
  * <p>
@@ -37,11 +38,11 @@ import xyz.lixiangyu.template.structure.DisjointSet;
  * <p>
  * <b>注意:</b>
  * <ul>
- *     <li><b>1 <= strs.length <= 100</b></li>
- *     <li><b>1 <=strs[i].length<= 1000</b></li>
- *     <li><b>sum(strs[i].length) <= 2 * 104</b></li>
- *     <li><b>strs[i]只包含小写字母</b></li>
- *     <li><b>strs中的所有单词都具有相同的长度，且是彼此的字母异位词</b></li>
+ *     <li><b>{@code 1 <= strs.length <= 100}</b></li>
+ *     <li><b>{@code 1 <=strs[i].length<= 1000}</b></li>
+ *     <li><b>{@code sum(strs[i].length) <= 2 * 10^4}</b></li>
+ *     <li><b>{@code strs[i]}只包含小写字母</b></li>
+ *     <li><b>{@code strs}中的所有单词都具有相同的长度，且是彼此的字母异位词</b></li>
  *     <li><b>字母异位词(anagram): 一种把某个字符串的字母的位置(顺序)加以改换所形成的新词</b></li>
  * </ul>
  * </p>
