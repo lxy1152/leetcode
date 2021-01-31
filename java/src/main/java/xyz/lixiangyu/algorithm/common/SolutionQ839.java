@@ -1,5 +1,6 @@
-package xyz.lixiangyu.algorithm;
+package xyz.lixiangyu.algorithm.common;
 
+import xyz.lixiangyu.AbstractSolution;
 import xyz.lixiangyu.template.structure.DisjointSet;
 
 /**
@@ -48,8 +49,24 @@ import xyz.lixiangyu.template.structure.DisjointSet;
  * </p>
  *
  * @author lixiangyu
+ * @see xyz.lixiangyu.Solution
+ * @see AbstractSolution
  */
-public class SolutionQ839 {
+public class SolutionQ839 extends AbstractSolution {
+    /**
+     * {@inheritDoc}
+     *
+     * @param obj 一个包含多个字母异位词的字符串数组
+     * @return 相似字符串数组的个数
+     */
+    @Override
+    public Object solve(Object obj) {
+        if (obj instanceof String[]) {
+            return numSimilarGroups((String[]) obj);
+        }
+        return null;
+    }
+
     /**
      * <p>
      * 思路:
@@ -86,6 +103,13 @@ public class SolutionQ839 {
         return disjointSet.getSize();
     }
 
+    /**
+     * 判断两个字符串是否相似
+     *
+     * @param source 原字符串
+     * @param target 目标字符串
+     * @return 是否相似
+     */
     public boolean isSimilar(String source, String target) {
         // 字符串长度必须相同才有可能是相似的
         // 因为题目中加了字符串长度都相同的限制, 所以这个判断可以不加

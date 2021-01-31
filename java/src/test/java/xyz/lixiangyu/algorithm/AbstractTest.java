@@ -6,36 +6,45 @@ import cn.hutool.core.lang.Console;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import xyz.lixiangyu.Solution;
 
 /**
- * 第{@linkplain SolutionQ839 839题}的测试类
+ * 抽象测试类, 每个测试类需要继承本类, 并重写需要的方法
  *
  * @author lixiangyu
  */
-public class SolutionQ839Test {
-    private SolutionQ839 solutionQ839;
-    private TimeInterval timeInterval;
+public abstract class AbstractTest {
+    /**
+     * 计时器
+     */
+    protected TimeInterval timeInterval;
 
+    /**
+     * 题解
+     */
+    protected Solution solution;
+
+    /**
+     * 执行测试用例前执行, 开启计时器, 实例化{@link #solution}
+     */
     @Before
     public void beforeTestMethod() {
-        solutionQ839 = new SolutionQ839();
         timeInterval = DateUtil.timer();
     }
 
+    /**
+     * 执行测试用例后执行, 输出执行所用时间
+     */
     @After
     public void afterTestMethod() {
         Console.log("测试结束, 用时: " + timeInterval.interval() + "ms");
     }
 
+    /**
+     * 提供默认的测试用例
+     */
     @Test
     public void testSolutionCaseOne() {
-        assertEquals(2, solutionQ839.numSimilarGroups(new String[]{"tars","rats","arts","star"}));
-    }
 
-    @Test
-    public void testSolutionCaseTwo() {
-        assertEquals(1, solutionQ839.numSimilarGroups(new String[]{"omv","ovm"}));
     }
 }

@@ -1,4 +1,6 @@
-package xyz.lixiangyu.algorithm;
+package xyz.lixiangyu.algorithm.common;
+
+import xyz.lixiangyu.AbstractSolution;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,8 +47,25 @@ import java.util.Map;
  * </p>
  *
  * @author lixiangyu
+ * @see xyz.lixiangyu.Solution
+ * @see AbstractSolution
  */
-public class SolutionQ1 {
+public class SolutionQ1 extends AbstractSolution {
+    /**
+     * {@inheritDoc}
+     *
+     * @param obj  一个整数数组
+     * @param obj1 目标值
+     * @return 一个数组, 包含了和为目标值的两个整数
+     */
+    @Override
+    public Object solve(Object obj, Object obj1) {
+        if (obj instanceof Integer[] && obj1 instanceof Integer) {
+            return twoSum((Integer[]) obj, (Integer) obj1);
+        }
+        return null;
+    }
+
     /**
      * <p>
      * 思路:<br>
@@ -57,11 +76,11 @@ public class SolutionQ1 {
      * @param target 目标值
      * @return 一个数组, 包含了和为目标值的两个整数
      */
-    public int[] twoSum(int[] nums, int target) {
+    public Integer[] twoSum(Integer[] nums, Integer target) {
         Map<Integer, Integer> map = new HashMap<>(10);
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(target - nums[i])) {
-                return new int[]{map.get(target - nums[i]), i};
+                return new Integer[]{map.get(target - nums[i]), i};
             }
             map.put(nums[i], i);
         }
