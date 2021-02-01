@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import xyz.lixiangyu.Solution;
+import xyz.lixiangyu.algorithm.constants.Constants;
 
 /**
  * 抽象测试类, 每个测试类需要继承本类, 并重写需要的方法
@@ -14,6 +15,11 @@ import xyz.lixiangyu.Solution;
  * @author lixiangyu
  */
 public abstract class AbstractTest {
+    /**
+     * 使用的解决方案类型
+     */
+    protected String solutionType = Constants.COMMON_SOLUTION;
+
     /**
      * 计时器
      */
