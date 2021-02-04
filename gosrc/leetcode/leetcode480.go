@@ -1,7 +1,10 @@
 package main
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
+// 在这一节中需要深刻认识到go 语言继承之间的关系， 在第一版的代码中，只是简单的
 type intHeap []int
 
 type intminHeap struct {
@@ -47,20 +50,24 @@ func medianSlidingWindow(nums []int, k int) []float64 {
 	heap.Init(right)
 	// 如果k 为偶数的话 做特殊处理
 	getMedian := func(k int) float64 {
-		if k%2 == 0 {
-			return float64(left.Top())
+		if k%2 == 1 {
+			return float64(right.Top())
 		}
-		return float64(((left.Top() + right.Top()) / 2))
+		// 第一处坑 要注意转换
+		return float64((float64((left.Top() + right.Top())) / 2))
 	}
 	K := k
 	// 先把窗口内的元素都添加到右边的小根堆中
 	for i := 0; i < K; i++ {
-		right.Push(nums[i])
+		//right.Push(nums[i])
+		heap.Push(right, nums[i])
 	}
 	//再从右边的小根堆拿出元素 放到左边的大根堆中
 	for i := 0; i < K/2; i++ {
-		left.Push(right.Top())
-		right.Pop()
+		//left.Push(right.Top())
+		//right.Pop()
+		heap.Push(left, right.Top())
+		heap.Pop(right)
 
 	}
 	// 创建结果数组
@@ -71,23 +78,27 @@ func medianSlidingWindow(nums []int, k int) []float64 {
 	for i := K; i < len(nums); i++ {
 		x, y := nums[i], nums[i-K]
 		if x >= right.Top() {
-			right.Push(x)
+			heap.Push(right, x)
 		} else {
-			left.Push(x)
+			heap.Push(left, nums[i])
 		}
+		// 如果滑动窗口最左边的数大于右边堆的最小值，则在右边堆中，否则在左边堆中，找到并去除。
 		if y >= right.Top() {
-			right.Pop()
+			heap.Remove(right, right.Find(y))
 		} else {
-			left.Pop()
+			heap.Remove(left, left.Find(y))
 		}
+		// 如果左边堆的大小大于右边大小，则把左边最大移到右边
 		for left.Len() > right.Len() {
-			right.Push(left.Top())
-			left.Pop()
+			heap.Push(right, left.Top())
+			heap.Pop(left)
 		}
+		// 如果右边堆大小大于左边加一，则把右边最小移到左边堆中
 		for right.Len() > left.Len()+1 {
-			left.Push(right.Top())
-			right.Pop()
+			heap.Push(left, right.Top())
+			heap.Pop(right)
 		}
+		// 结果集中添加当前得到的中位数。
 		res = append(res, getMedian(K))
 	}
 
@@ -95,5 +106,5 @@ func medianSlidingWindow(nums []int, k int) []float64 {
 }
 
 func main() {
-	print(medianSlidingWindow([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
+	print(medianSlidingWindow([]int{1, 4, 2, 3}, 4)[0])
 }
