@@ -15,3 +15,4 @@
 | 2021-02-03 | [480. 滑动窗口中位数](https://leetcode-cn.com/problems/sliding-window-median/) | [480. 滑动窗口中位数](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ480.java) |
 | 2021-02-04 | [643. 子数组最大平均数 I](https://leetcode-cn.com/problems/maximum-average-subarray-i) | [643. 子数组最大平均数 I](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ643.java) |
 | 2021-02-05 | [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | [1208. 尽可能使字符串相等](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ1208.java) |
+| 2021-02-06 | [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) | [1423. 可获得的最大点数](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ1423.java) |
