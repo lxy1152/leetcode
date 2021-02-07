@@ -16,3 +16,4 @@
 | 2021-02-04 | [643. 子数组最大平均数 I](https://leetcode-cn.com/problems/maximum-average-subarray-i) | [643. 子数组最大平均数 I](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ643.java) |
 | 2021-02-05 | [1208. 尽可能使字符串相等](https://leetcode-cn.com/problems/get-equal-substrings-within-budget/) | [1208. 尽可能使字符串相等](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ1208.java) |
 | 2021-02-06 | [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) | [1423. 可获得的最大点数](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ1423.java) |
+| 2021-02-07 | [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | [665. 非递减数列](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ665.java) |
