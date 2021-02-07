@@ -15,7 +15,7 @@ func maxScore(cardPoints []int, k int) int {
 	if k > leng {
 		return sum
 	}
-
+	// 前缀和可以很容易的得出[i,j]区间的总和
 	for i := 0; i <= k; i++ {
 		cur = preSum[leng-(k-i)] - preSum[i]
 		res = max3(sum-cur, res)
@@ -40,7 +40,7 @@ func maxScore1(cardPoints []int, k int) int {
 	if k > leng {
 		return sum
 	}
-
+	// 滑动窗口 可以只往右滑，只需要一个遍历来记录坐标，右边可以使用index
 	for i := leng - k; i < leng; i++ {
 		cur = cur - cardPoints[i-leng+k] + cardPoints[i]
 		res = max3(res, sum-cur)
