@@ -18,3 +18,4 @@
 | 2021-02-06 | [1423. 可获得的最大点数](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/) | [1423. 可获得的最大点数](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ1423.java) |
 | 2021-02-07 | [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | [665. 非递减数列](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ665.java) |
 | 2021-02-08 | [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | [978. 最长湍流子数组](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ978.java) |
+| 2021-02-09 | [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | [992. K 个不同整数的子数组](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ992.java) |
