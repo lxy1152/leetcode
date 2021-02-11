@@ -19,3 +19,5 @@
 | 2021-02-07 | [665. 非递减数列](https://leetcode-cn.com/problems/non-decreasing-array/) | [665. 非递减数列](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ665.java) |
 | 2021-02-08 | [978. 最长湍流子数组](https://leetcode-cn.com/problems/longest-turbulent-subarray/) | [978. 最长湍流子数组](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ978.java) |
 | 2021-02-09 | [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/) | [992. K 个不同整数的子数组](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ992.java) |
+| 2021-02-10 | [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/) | [567. 字符串的排列](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ567.java) |
+| 2021-02-11 | [703. 数据流中的第K大元素](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/) | [703. 数据流中的第K大元素 ](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/SolutionQ703.java) |
