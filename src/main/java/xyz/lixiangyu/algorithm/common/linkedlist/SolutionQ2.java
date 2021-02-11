@@ -1,6 +1,7 @@
 package xyz.lixiangyu.algorithm.common.linkedlist;
 
 import xyz.lixiangyu.AbstractSolution;
+import xyz.lixiangyu.template.structure.ListNode;
 
 /**
  * <a href="https://leetcode-cn.com/problems/add-two-numbers/">2. 两数相加</a>
@@ -115,45 +116,5 @@ public class SolutionQ2 extends AbstractSolution {
         }
         // 第一个节点保存的是0, 不需要返回
         return result.next;
-    }
-}
-
-/**
- * 本题使用的链表的数据结构
- */
-class ListNode {
-    /**
-     * 当前节点保存的数据
-     */
-    int val;
-
-    /**
-     * 指向下一个节点
-     */
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    /**
-     * 重写toString, 用于junit测试时比较数据是否相同
-     *
-     * @return string
-     */
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
     }
 }

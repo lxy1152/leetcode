@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import xyz.lixiangyu.algorithm.AbstractTest;
+import xyz.lixiangyu.template.structure.ListNode;
 
 /**
  * {@link SolutionQ2}的测试类
