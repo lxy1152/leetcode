@@ -46,26 +46,32 @@ func checkInclusion_todo(s1 string, s2 string) bool {
 	lengS := len(s1)
 	dict := make(map[rune]int, lengS+1)
 	m2 := map[rune]int{}
+	if lengS > len(s2) {
+		return false
+	}
 	for right < lengS {
 		dict[rune(s1[right])] += 1
 		m2[rune(s2[right])] += 1
 		right++
 	}
-	if right == lengS && verify1(dict, m2) {
+	right--
+	if right == len(s2)-1 && verify1(dict, m2) {
 		return true
 	}
 	// 记录s1 字符串字符的数目
 	for right < len(s2) {
 		nowl, nowr := s2[left], s2[right]
-		m2[rune(nowl)]--
-		m2[rune(nowr)]--
-		left++
-		right++
+
 		if dict[rune(nowl)] == m2[rune(nowl)] && dict[rune(nowr)] == m2[rune(nowr)] && verify1(dict, m2) {
 			return true
 		}
-		m2[rune(s2[right])]++
-		m2[rune(s2[left])]++
+
+		m2[rune(nowl)]--
+		left++
+		right++
+		if right < len(s2) {
+			m2[rune(s2[right])]++
+		}
 
 	}
 	return false
@@ -81,5 +87,5 @@ func verify1(m1, m2 map[rune]int) bool {
 }
 
 func main() {
-	print(checkInclusion("ab", "bcba"))
+	print(checkInclusion_todo("ab", "a"))
 }
