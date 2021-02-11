@@ -1,32 +1,32 @@
-package xyz.lixiangyu.algorithm.interview;
+package xyz.lixiangyu.algorithm.common.string;
 
 import org.junit.Assert;
 import org.junit.Test;
 import xyz.lixiangyu.algorithm.AbstractTest;
-import xyz.lixiangyu.algorithm.interview.string.Solution0104;
 
 /**
- * {@link Solution0104}的测试类
+ * {@link SolutionQ67}的测试类
  *
  * @author lixiangyu
  */
-public class Solution0104Test extends AbstractTest {
+public class SolutionQ67Test extends AbstractTest {
     /**
      * {@inheritDoc}
      */
     @Override
     public void beforeTestMethod() {
         super.beforeTestMethod();
-        solution = new Solution0104();
+        solution = new SolutionQ67();
     }
 
     @Test
+    @Override
     public void testSolutionCaseOne() {
-        Assert.assertEquals(true, solution.solve("tactcoa"));
+        Assert.assertEquals("10101", solution.solve("1010", "1011"));
     }
 
     @Test
     public void testSolutionCaseTwo() {
-        Assert.assertEquals(false, solution.solve("tattcoa"));
+        Assert.assertEquals("100", solution.solve("11", "1"));
     }
 }
