@@ -29,3 +29,4 @@
 | 2021-02-17 | [566. 重塑矩阵](https://leetcode-cn.com/problems/reshape-the-matrix/submissions/) | [566. 重塑矩阵](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ566.java) |
 | 2021-02-18 | [995. K 连续位的最小翻转次数](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/) | [995. K 连续位的最小翻转次数](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/slidingwindow/SolutionQ995.java) |
 | 2021-02-19 | [1004. 最大连续1的个数 III](https://leetcode-cn.com/problems/max-consecutive-ones-iii/) | [1004. 最大连续1的个数 III](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/twopointer/SolutionQ1004.java) |
+| 2021-02-20 | [697. 数组的度](https://leetcode-cn.com/problems/degree-of-an-array/) | [697. 数组的度](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ697.java) |
