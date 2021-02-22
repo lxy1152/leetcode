@@ -54,7 +54,7 @@ func getNext(m map[int]int, flag int) int {
 	}
 }
 
-// 在最初并没有想到去除已被删除的元素的很好的方法 例如  42224 或 12221  最初用数组存储的时候没有想过4要怎么进行删除， 其实是很简单的时， 既然读到后面连续两个二了，说明
+// 在最初并没有想到去除已被删除的元素的很好的方法 例如  42224 或 12221  最初用数组存储的时候没有想过4要怎么进行删除， 其实是很简单的时， 既然读到后面连续两个二了，说明之前的4肯定被淘汰掉， 因为 次小一定是我们第二次加入的2
 func longestSubarray1(nums []int, limit int) int {
 	leng := len(nums)
 	left, res := 0, 0
@@ -73,7 +73,7 @@ func longestSubarray1(nums []int, limit int) int {
 	for i := 0; i < leng; i++ {
 
 		/*
-			在这里 进行了次大或者次小的元素的淘汰，
+			在这里 进行了次大或者次小的元素的淘汰，每当遇到一个足够小的就加入，替换掉哪些比较大的。
 		*/
 		for len(max) > 0 && nums[i] > max[len(max)-1] {
 			max = max[:len(max)-1]
