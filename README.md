@@ -34,3 +34,4 @@
 | 2021-02-22 | [766. 托普利茨矩阵](https://leetcode-cn.com/problems/toeplitz-matrix/) | [766. 托普利茨矩阵](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ766.java) |
 | 2021-02-23 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | [1052. 爱生气的书店老板](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/slidingwindow/SolutionQ1052.java) |
 | 2021-02-24 | [832. 翻转图像](https://leetcode-cn.com/problems/flipping-an-image/) | [832. 翻转图像](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ832.java) |
+| 2021-02-25 | [867. 转置矩阵](https://leetcode-cn.com/problems/transpose-matrix/) | [867. 转置矩阵](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ867.java) |
