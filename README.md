@@ -35,3 +35,5 @@
 | 2021-02-23 | [1052. 爱生气的书店老板](https://leetcode-cn.com/problems/grumpy-bookstore-owner/) | [1052. 爱生气的书店老板](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/slidingwindow/SolutionQ1052.java) |
 | 2021-02-24 | [832. 翻转图像](https://leetcode-cn.com/problems/flipping-an-image/) | [832. 翻转图像](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ832.java) |
 | 2021-02-25 | [867. 转置矩阵](https://leetcode-cn.com/problems/transpose-matrix/) | [867. 转置矩阵](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ867.java) |
+| 2021-02-26 | [1178. 猜字谜](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/) | [1178. 猜字谜](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/other/SolutionQ1178.java) |
+| 2021-02-27 | [395. 至少有 K 个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | [395. 至少有 K 个重复字符的最长子串](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/twopointer/SolutionQ395.java) |
