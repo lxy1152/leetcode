@@ -32,37 +32,36 @@ public class Sort {
      * @param right 结束位置
      */
     public static void doQuickSort(int[] nums, int left, int right) {
+        // 递归的结束条件
         if (left > right) {
             return;
         }
-        int i, j, temp, t;
-        i = left;
-        j = right;
-        //temp就是基准位
-        temp = nums[left];
-
+        int i = left;
+        int j = right;
+        // 取当前基准位
+        int temp = nums[left];
         while (i < j) {
-            //先看右边，依次往左递减
+            // 先看右边，依次往左递减
             while (temp <= nums[j] && i < j) {
                 j--;
             }
-            //再看左边，依次往右递增
+            // 再看左边，依次往右递增
             while (temp >= nums[i] && i < j) {
                 i++;
             }
-            //如果满足条件则交换
+            // 如果满足条件则交换
             if (i < j) {
-                t = nums[j];
+                int t = nums[j];
                 nums[j] = nums[i];
                 nums[i] = t;
             }
         }
-        //最后将基准为与i和j相等位置的数字交换
+        // 将基准位与i和j相等位置的数字交换
         nums[left] = nums[i];
         nums[i] = temp;
-        //递归调用左半数组
+        // 递归对左半数组进行排序
         doQuickSort(nums, left, j - 1);
-        //递归调用右半数组
+        // 递归对右半数组进行排序
         doQuickSort(nums, j + 1, right);
     }
 }
