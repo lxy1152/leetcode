@@ -38,3 +38,4 @@
 | 2021-02-26 | [1178. 猜字谜](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/) | [1178. 猜字谜](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/other/SolutionQ1178.java) |
 | 2021-02-27 | [395. 至少有 K 个重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/) | [395. 至少有 K 个重复字符的最长子串](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/twopointer/SolutionQ395.java) |
 | 2021-02-28 | [896. 单调数列](https://leetcode-cn.com/problems/monotonic-array/) | [896. 单调数列](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/array/SolutionQ896.java) |
+| 2021-03-01 | [303. 区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | [303. 区域和检索 - 数组不可变](https://github.com/lxy1152/LeetCode/blob/java/src/main/java/xyz/lixiangyu/algorithm/common/dp/SolutionQ303.java) |
