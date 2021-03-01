@@ -38,7 +38,8 @@ func closestCost(baseCosts []int, toppingCosts []int, target int) int {
 	}
 	for i := 0; i < a; i++ {
 		s := baseCosts[i]
-		for j := 0; j < 1<<b*2; j++ {
+		// 不知道为什么 在这里明明乘法操作优先级大于移位 ,但是却没办法进行正常的计算。 下面移位处同样。
+		for j := 0; j < 1<<(b*2); j++ {
 			r := s
 			flag := 0
 			for k := 0; k < b; k++ {
@@ -47,7 +48,6 @@ func closestCost(baseCosts []int, toppingCosts []int, target int) int {
 					flag = 1
 					break
 				}
-
 				r += toppingCosts[k] * t
 			}
 			if flag == 1 {
@@ -63,5 +63,5 @@ func closestCost(baseCosts []int, toppingCosts []int, target int) int {
 }
 
 func main() {
-	print(closestCost([]int{10}, []int{1}, 1))
+	print(closestCost([]int{5, 9}, []int{10, 1}, 7))
 }
