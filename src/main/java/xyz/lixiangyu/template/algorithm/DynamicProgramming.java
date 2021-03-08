@@ -65,4 +65,49 @@ public class DynamicProgramming {
         // TODO: 待补充具体实现
         return 0;
     }
+
+    /**
+     * 0-1 背包问题代码模板
+     *
+     * <p>
+     * 思路:<br>
+     * 使用{@code dp[n][w]}数组表示前{@code n}个物品在背包容量{@code w}下的最大价值<br>
+     * 对于任意的背包{@code i, j}, 其价值和之前的背包的关系是:
+     * <ul>
+     *     <li>如果当前背包的容量{@code j}装不下第{@code i}个物品, 那么其价值和第{@code [i - 1, j]}个背包的价值是相同的</li>
+     *     <li>
+     *         如果能装下第{@code i}个物品, 需要用第{@code [i - 1, j - wt[i]]}个背包来装这个物品, 在它的基础上加上新物品的价值<br>
+     *         但问题是, 装上新物品的背包价值并不一定就比前一背包的价值高, 因为{@code j - wt[i]}的运算会忽略掉一部分的物品<br>
+     *         所以需要取最大值作为当前背包的结果
+     *     </li>
+     * </ul>
+     * 完成以上计算后, 将{@code dp[n][w]}的结果返回即是答案
+     * </p>
+     *
+     * @param w   背包的承重上限
+     * @param n   物品数量
+     * @param wt  每个物品的重量
+     * @param val 每个物品的价值
+     * @return 背包的最大价值
+     */
+    public static int knapsack(int w, int n, int[] wt, int[] val) {
+        // 由于下标从1开始, 所以数组大小需要加1
+        int[][] dp = new int[n + 1][w + 1];
+
+        // 注意: 由于下标从1开始, 所以wt和val数组对应的下标需要减1
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= w; j++) {
+                // 如果当前的背包容量装不下重量为wt[i - 1]的物品, 那么其价值和之前的背包是相同的
+                if (j - wt[i - 1] < 0) {
+                    dp[i][j] = dp[i - 1][j];
+                }
+                // 如果能装下这个物品, 需要比较装下物品后的价值是否比前一背包大
+                else {
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - wt[i - 1]] + val[i - 1]);
+                }
+            }
+        }
+
+        return dp[n][w];
+    }
 }
