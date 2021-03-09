@@ -90,7 +90,7 @@ public class DynamicProgramming {
      * @param val 每个物品的价值
      * @return 背包的最大价值
      */
-    public static int knapsack(int w, int n, int[] wt, int[] val) {
+    public static int knapsackBase(int w, int n, int[] wt, int[] val) {
         // 由于下标从1开始, 所以数组大小需要加1
         int[][] dp = new int[n + 1][w + 1];
 
@@ -109,5 +109,113 @@ public class DynamicProgramming {
         }
 
         return dp[n][w];
+    }
+
+    /**
+     * 子集背包问题, 以{@linkplain xyz.lixiangyu.algorithm.common.dp.SolutionQ416 416. 分割等和子集}
+     * 为例
+     *
+     * <p>
+     * 思路:<br>
+     * 将子集问题转换为0-1背包问题<br>
+     * 比如在此题中, 可以将原题转换为:<br>
+     * 给定一个最大承重{@code sum / 2}的背包和{@code n}个物品, 这个背包能否被正好装满?<br>
+     * 转换后的问题与上面的{@linkplain #knapsackBase 0-1背包问题}的区别在于, 不是求最大而是恰好满足<br>
+     *
+     * 在代码实现上, 除了要做一些边界检查外, 可完全参考{@linkplain #knapsackBase 0-1背包问题}来解决<br>
+     * 对于本题而言, 使用二维{@code dp}数组耗时较长, 因为很多数据实际上是不需要的,
+     * 请见{@linkplain #knapsackSubsetStateCompression(int[]) 优化后的子集背包}代码实现思路
+     * </p>
+     *
+     * @param nums 一个数组
+     * @return 是否能够进行分割
+     */
+    public static boolean knapsackSubset(int[] nums) {
+        // 计算数组中数字的总和
+        int space = Arrays.stream(nums).sum();
+
+        // 如果总和不是偶数, 那么分成的两部分的数字必然是不等的, 直接返回false
+        if ((space & 1) == 1) {
+            return false;
+        }
+        // 对于能分成两部分的情况, 可套用0-1背包问题的代码模板
+        else {
+            // 数组长度
+            int n = nums.length;
+
+            // 因为分成两部分, 所以总空间大小需要除2
+            space = space >> 1;
+
+            // 创建dp数组, 由于下标从1开始, 所以容量需要加1
+            boolean[][] dp = new boolean[n + 1][space + 1];
+
+            // 当背包容量为0时, 认为背包已经填满了
+            for (int i = 0; i <= n; i++) {
+                dp[i][0] = true;
+            }
+
+            // 注意nums数组的下标
+            for (int i = 1; i <= n; i++) {
+                for (int j = 1; j <= space; j++) {
+                    if (j - nums[i - 1] < 0) {
+                        dp[i][j] = dp[i - 1][j];
+                    } else {
+                        // 这里不需要max了, 需要用逻辑或
+                        // 因为只要存在一种情况满足题意就认为是可以的
+                        dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i - 1]];
+                    }
+                }
+            }
+
+            return dp[n][space];
+        }
+    }
+
+    /**
+     * 子集背包问题, 以{@linkplain xyz.lixiangyu.algorithm.common.dp.SolutionQ416 416. 分割等和子集}
+     * 为例
+     *
+     * <p>
+     * 思路:<br>
+     * 在{@link #knapsackSubset(int[])}中已经解决了子集背包问题, 可是{@code dp}数组每次只依赖于上一行和左上方某位置的结果,
+     * 并且上方的结果在以后都不再使用了(最后返回的是{@code dp[n][space]}), 所以使用二维数组来保存所有的结果会浪费空间<br>
+     * 解决方法是对{@code dp}数组进行压缩, 将原二维数组压成一维即可
+     * </p>
+     *
+     * @param nums 一个数组
+     * @return 是否能够进行分割
+     */
+    public static boolean knapsackSubsetStateCompression(int[] nums) {
+        // 计算数组中数字的总和
+        int space = Arrays.stream(nums).sum();
+
+        // 如果总和不是偶数, 那么分成的两部分的数字必然是不等的, 直接返回false
+        if ((space & 1) == 1) {
+            return false;
+        } else {
+            // 数组长度
+            int n = nums.length;
+
+            // 因为分成两部分, 所以总空间大小需要除2
+            space = space >> 1;
+
+            // 在上面的代码实现中, dp数组实际上只依赖于上一行的结果, 并且之前的结果都不再使用了
+            // 所以对dp数组进行状态压缩, 将原二维dp数组压缩成一维的
+            boolean[] dp = new boolean[space + 1];
+
+            // 背包大小是为0时, 认为已经填满了
+            dp[0] = true;
+
+            for (int i = 0; i < n; i++) {
+                // 此处使用逆序的原因是前项结果会影响后项
+                for (int j = space; j >= 0; j--) {
+                    if (j - nums[i] >= 0) {
+                        dp[j] = dp[j] || dp[j - nums[i]];
+                    }
+                }
+            }
+
+            return dp[space];
+        }
     }
 }
