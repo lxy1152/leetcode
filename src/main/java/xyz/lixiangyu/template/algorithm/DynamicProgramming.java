@@ -112,6 +112,36 @@ public class DynamicProgramming {
     }
 
     /**
+     * 0-1 背包问题代码模板, 使用状态压缩
+     *
+     * <p>
+     * 思路:<br>
+     * 类似{@linkplain #knapsackSubsetStateCompression(int[]) 子集背包问题状态压缩}和
+     * {@linkplain #knapsackCompleteStatusCompression(int, int[]) 完全背包问题状态压缩}的思路进行状态压缩
+     * </p>
+     *
+     * @param w   背包的承重上限
+     * @param n   物品数量
+     * @param wt  每个物品的重量
+     * @param val 每个物品的价值
+     * @return 背包的最大价值
+     */
+    public static int knapsackBaseStateCompression(int w, int n, int[] wt, int[] val) {
+        // 压缩成一维的dp数组
+        int[] dp = new int[w + 1];
+
+        // 状态转移
+        for (int i = 0; i < n; i++) {
+            for (int j = w; j >= 0; j--) {
+                if (j - wt[i] >= 0) {
+                    dp[j] = Math.max(dp[j], dp[j - wt[i]] + val[i]);
+                }
+            }
+        }
+        return dp[w];
+    }
+
+    /**
      * 子集背包问题, 以{@linkplain xyz.lixiangyu.algorithm.common.dp.SolutionQ416 416. 分割等和子集}
      * 为例
      *
@@ -217,5 +247,75 @@ public class DynamicProgramming {
 
             return dp[space];
         }
+    }
+
+    /**
+     * 完全背包问题, 以{@linkplain xyz.lixiangyu.algorithm.common.dp.SolutionQ518 518. 零钱兑换 II}为例
+     *
+     * <p>
+     * 思路:<br>
+     * 在代码实现上基本和{@linkplain #knapsackBase(int, int, int[], int[]) 0-1背包问题}相似,
+     * 区别在于因为数量不做限制, 需要做求和而不是取最值
+     * </p>
+     *
+     * @param amount 总金额
+     * @param coins  硬币组合
+     * @return 总组合方式的数量
+     */
+    public static int knapsackComplete(int amount, int[] coins) {
+        // 硬币的种类
+        int n = coins.length;
+
+        // 二维dp数组
+        int[][] dp = new int[n + 1][amount + 1];
+
+        // 对任意数量的硬币, 如果总钱数是0, 那么组合方式只有一种
+        for (int i = 0; i <= n; i++) {
+            dp[i][0] = 1;
+        }
+
+        // 和0-1背包问题的区别在于, 不需要使用Math.max了
+        // 因为硬币的数量是无限的, 所以这里要求和
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= amount; j++) {
+                if (j - coins[i - 1] < 0) {
+                    dp[i][j] = dp[i - 1][j];
+                } else {
+                    dp[i][j] = dp[i - 1][j] + dp[i][j - coins[i - 1]];
+                }
+            }
+        }
+        return dp[n][amount];
+    }
+
+    /**
+     * 完全背包问题, 以{@linkplain xyz.lixiangyu.algorithm.common.dp.SolutionQ518 518. 零钱兑换 II}为例
+     *
+     * <p>
+     * 思路:<br>
+     * 类似{@linkplain #knapsackSubsetStateCompression(int[]) 子集背包问题}, 在这个问题中同样只涉及{@code dp}数组
+     * 的上一行, 所以进行状态压缩优化, 时间上节省了7ms
+     * </p>
+     *
+     * @param amount 总金额
+     * @param coins  硬币组合
+     * @return 总组合方式的数量
+     */
+    public static int knapsackCompleteStatusCompression(int amount, int[] coins) {
+        // 一维的dp数组
+        int[] dp = new int[amount + 1];
+
+        // 如果总金额是0, 那么组合方式只有1种
+        dp[0] = 1;
+
+        // 状态转移
+        for (int coin : coins) {
+            for (int j = 1; j <= amount; j++) {
+                if (j - coin >= 0) {
+                    dp[j] = dp[j] + dp[j - coin];
+                }
+            }
+        }
+        return dp[amount];
     }
 }
