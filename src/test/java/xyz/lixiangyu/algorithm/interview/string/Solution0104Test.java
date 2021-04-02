@@ -1,9 +1,8 @@
-package xyz.lixiangyu.algorithm.interview;
+package xyz.lixiangyu.algorithm.interview.string;
 
 import org.junit.Assert;
 import org.junit.Test;
 import xyz.lixiangyu.algorithm.AbstractTest;
-import xyz.lixiangyu.algorithm.interview.string.Solution0104;
 
 /**
  * {@link Solution0104}的测试类
