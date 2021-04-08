@@ -1,7 +1,5 @@
 package main
 
-import "sort"
-
 /*
 781. 森林中的兔子
 森林中，每个兔子都有颜色。其中一些兔子（可能是全部）告诉你还有多少其他的兔子和自己有相同的颜色。我们将这些回答放在 answers 数组里。
@@ -27,16 +25,15 @@ import "sort"
 
 answers 的长度最大为1000。
 answers[i] 是在 [0, 999] 范围内的整数。
- */
+*/
 
-func numRabbits(answers []int) int {
-	sort.Ints(answers)
-	k:=map[int]int{}
-	for i := range answers{
-		if k[answers[i]]==0{
-			k[answers[i]]=1
-			res+=
-		}
+func numRabbits(answers []int) (ans int) {
+	count := map[int]int{}
+	for _, y := range answers {
+		count[y]++
 	}
-
+	for y, x := range count {
+		ans += (x + y) / (y + 1) * (y + 1)
+	}
+	return
 }
