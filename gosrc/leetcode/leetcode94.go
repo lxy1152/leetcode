@@ -1,5 +1,11 @@
 package main
 
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
 // 94. 二叉树的中序遍历
 func inorderTraversal(root *TreeNode) []int {
 	res := make([]int, 0)
