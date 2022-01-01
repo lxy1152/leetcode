@@ -6,6 +6,7 @@ import org.apache.commons.lang3.time.StopWatch;
 import xyz.lixiangyu.leetcode.infrastructure.annotation.Solution;
 import xyz.lixiangyu.leetcode.infrastructure.model.testcase.Case;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.ArrayList;
@@ -60,11 +61,19 @@ public abstract class AbstractSolution implements Solve {
                 STOP_WATCH.start();
                 Object invokeResult = method.invoke(this, testCase.getParameters());
                 // 保存执行信息
-                solveResults.add(new SolveResult(methodName, invokeResult, STOP_WATCH.getTime()));
-                STOP_WATCH.reset();
+                solveResults.add(new SolveResult(methodName, invokeResult, STOP_WATCH.getNanoTime(), null));
             } catch (Exception e) {
                 log.error("执行[{}]出错", methodName, e);
-                solveResults.add(null);
+
+                SolveResult solveResult = SolveResult.builder().solutionName(methodName).solveResult(null)
+                                                     .time(STOP_WATCH.getNanoTime()).errorMessage(e.toString()).build();
+                if (e instanceof InvocationTargetException) {
+                    Throwable throwable = e.getCause();
+                    solveResult.setErrorMessage(throwable.toString());
+                }
+                solveResults.add(solveResult);
+            } finally {
+                STOP_WATCH.reset();
             }
         }
         return solveResults;

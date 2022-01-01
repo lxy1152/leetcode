@@ -1,6 +1,6 @@
 package xyz.lixiangyu.leetcode.infrastructure.model.solution;
 
-import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 /**
@@ -9,7 +9,7 @@ import lombok.Data;
  * @author lixiangyu
  */
 @Data
-@AllArgsConstructor
+@Builder
 public class SolveResult {
     /**
      * 解决方案名称
@@ -25,4 +25,9 @@ public class SolveResult {
      * 执行耗时
      */
     private long time;
+
+    /**
+     * 错误信息
+     */
+    private String errorMessage;
 }

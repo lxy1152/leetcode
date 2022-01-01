@@ -7,7 +7,7 @@ package xyz.lixiangyu.leetcode.infrastructure.equalrule.rule;
  */
 public class CommonEqualRule extends AbstractEqualRule {
     @Override
-    public boolean equals(Object obj1, Object obj2) {
+    protected boolean doEquals(Object obj1, Object obj2) {
         return obj1.equals(obj2);
     }
 

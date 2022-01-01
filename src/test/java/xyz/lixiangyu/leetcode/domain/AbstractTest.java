@@ -2,6 +2,7 @@ package xyz.lixiangyu.leetcode.domain;
 
 import com.sun.xml.internal.txw2.IllegalAnnotationException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import xyz.lixiangyu.leetcode.infrastructure.annotation.Problem;
@@ -61,10 +62,14 @@ public abstract class AbstractTest {
                         continue;
                     }
 
-                    log.info("\t用例" + i++ + "，结果{}：\n\t\t传入参数：{}\n\t\t期望得到：{}\n\t\t运算结果：{}",
-                            ObjectEqualRules.isObjectEqualsByEqualRules(solveResult.getSolveResult(),
-                                    testCase.getExpectedResult()) ? "正确" : "错误", testCase.getParameters(),
-                            testCase.getExpectedResult(), solveResult.getSolveResult());
+                    log.info("\t用例" + i++ + "，耗时：{} 纳秒，结果{}：\n\t\t传入参数：{}\n\t\t期望得到：{}\n\t\t运算结果：{}",
+                            solveResult.getTime(), ObjectEqualRules.isObjectEqualsByEqualRules(solveResult.getSolveResult(),
+                                    testCase.getExpectedResult()) ? "正确" : "错误",
+                            testCase.getParameters(), testCase.getExpectedResult(), solveResult.getSolveResult());
+
+                    if (StringUtils.isNotBlank(solveResult.getErrorMessage())) {
+                        log.info("\t\t错误信息：{}", solveResult.getErrorMessage());
+                    }
                 }
             }
         }
