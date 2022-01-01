@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <properties>
+        <property name="log_path">./logs</property>
+
+        <property name="common_msg">${log_path}/common.log</property>
+        <property name="rolling_file_common_msg">${log_path}/common%d{yyyy-MM-dd}.log</property>
+
+        <property name="error_msg">${log_path}/error.log</property>
+        <property name="rolling_file_error_msg">${log_path}/error%d{yyyy-MM-dd}.log</property>
+    </properties>
+
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <Console name="test_result" target="SYSTEM_OUT">
+            <PatternLayout pattern="%msg%n"/>
+        </Console>
+
+        <RollingFile name="rolling_file_common_msg"
+                     filename="${common_msg}" filePattern="${rolling_file_common_msg}"
+                     append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level[%L] - %msg%n" />
+            <Filters>
+                <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="rolling_file_error_msg"
+                     filename="${error_msg}" filePattern="${rolling_file_error_msg}"
+                     append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level[%L] - %msg%n" />
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="ERROR">
+            <AppenderRef ref="console"/>
+        </Root>
+
+        <Logger name="xyz.lixiangyu.leetcode" level="ERROR" additivity="false">
+            <AppenderRef ref="rolling_file_error_msg"/>
+        </Logger>
+
+
+        <Logger name="xyz.lixiangyu.leetcode" level="INFO" additivity="false">
+            <AppenderRef ref="rolling_file_common_msg"/>
+        </Logger>
+
+        <Logger name="xyz.lixiangyu.leetcode.domain.AbstractTest" level="INFO" additivity="true">
+            <AppenderRef ref="test_result"/>
+        </Logger>
+    </Loggers>
+</Configuration>
