@@ -5,6 +5,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.reflections.Reflections;
 import xyz.lixiangyu.leetcode.infrastructure.equalrule.rule.EqualRule;
 
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -33,7 +34,9 @@ public class ObjectEqualRules {
         Class<?>[] classes = implClass.toArray(new Class[0]);
         for (Class<?> impl : classes) {
             try {
-                register((EqualRule) Class.forName(impl.getName()).newInstance());
+                if (!Modifier.isAbstract(impl.getModifiers())) {
+                    register((EqualRule) Class.forName(impl.getName()).newInstance());
+                }
             } catch (Exception e) {
                 log.error("加载对象相等校验规则失败", e);
             }

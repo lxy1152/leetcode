@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e700c9fa-4eb3-46e8-bccf-f6598d496a58" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/application/command/SolveQuestion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/domain/entity/array/SolutionQ1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/domain/entity/array/SolutionQ2022.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/annotation/ProblemTag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/annotation/Solution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/solution/AbstractSolution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/solution/Solve.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/solution/SolveResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/solution/Tag.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/testcase/Case.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/xyz/lixiangyu/leetcode/infrastructure/model/testcase/Cases.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/domain/AbstractTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/domain/array/SolutionQ1Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/domain/array/SolutionQ2022Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/annotation/Problem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/ObjectEqualRules.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/rule/AbstractEqualRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/rule/ArrayEqualRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/rule/CommonEqualRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/rule/EqualRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/xyz/lixiangyu/leetcode/infrastructure/equalrule/rule/Order.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="D:\Maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="23S7crnyXUxNIPqDxS4q489X0K0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="新增" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/JDK8/bin/jvisualvm.exe" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.15917969" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="vcs.Subversion.Network" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="SwaggerCodegen">
+      <option name="activeConfigurationType" value="FILE" />
+      <option name="configurationPath" value="" />
+      <option name="customJreEnabled" value="false" />
+      <option name="customTemplatesPath" value="" />
+      <option name="enableDebugLogging" value="false" />
+      <option name="generateToPath" value="" />
+      <option name="generationParameters">
+        <list />
+      </option>
+      <option name="generatorPath" value="" />
+      <option name="jdkPath" value="Default" />
+      <option name="language" value="" />
+      <option name="specificationPath" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration useDefault="false">C:\Users\lxy\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="e700c9fa-4eb3-46e8-bccf-f6598d496a58" name="变更" comment="" />
+      <created>1641715721560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641715721560</updated>
+      <workItem from="1641715723389" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+  </component>
+</project>
