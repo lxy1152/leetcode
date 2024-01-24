@@ -40,5 +40,38 @@ package main
 */
 
 func countDifferentSubsequenceGCDs(nums []int) int {
+	// 1. 求出最大值
+	max := 0
+	for i := 0; i < len(nums); i++ {
+		if nums[i] > max {
+			max = nums[i]
+		}
+	}
+	// 2. 构建一个数组，用于记录每个数出现的次数
+	arr := make([]int, max+1)
+	for i := 0; i < len(nums); i++ {
+		arr[nums[i]]++
+	}
+	// 3. 构建一个数组，用于记录每个数的最大公约数
+	arr2 := make([]int, max+1)
+	for i := 1; i <= max; i++ {
+		for j := i; j <= max; j += i {
+			arr2[i] += arr[j]
+		}
+	}
+	// 4. 遍历arr2，找出大于1的数
+	count := 0
+	for i := 1; i <= max; i++ {
+		if arr2[i] > 1 {
+			count++
+		}
+	}
+	return count
+}
+
+// test
+func main() {
+	arr := []int{6, 10, 3}
+	println(countDifferentSubsequenceGCDs(arr))
 
 }

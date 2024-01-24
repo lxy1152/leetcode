@@ -17,8 +17,6 @@ package main
 
 要想使 perm 回到排列初始值，至少需要执行多少步操作？返回最小的 非零 操作步数。
 
-
-
 示例 1：
 
 输入：n = 2
@@ -39,27 +37,27 @@ package main
 输入：n = 6
 输出：4
 
-
 提示：
 
 2 <= n <= 1000
 n​​​​​​ 是一个偶数
 */
 func reinitializePermutation(n int) int {
-	count := n / 2
-	perm := make([]int, n)
+	// 1. 构建一个数组，用于记录每个数出现的次数
+	arr := make([]int, n)
 	for i := 0; i < n; i++ {
-		if i%2 == 0 {
-			perm[i] = i / 2
-			perm[i], perm[i/2] = perm[i/2], perm[i]
-		} else {
-			perm[i] = n/2 + (i-1)/2
+		arr[i] = i
+	}
+	// 2. 构建一个数组，用于记录每个数的最大公约数
+	arr2 := make([]int, n)
+	for i := 1; i <= n; i++ {
+		for j := i; j <= n; j += i {
+			arr2[i] += arr[j]
 		}
 	}
-
-	return count
+	return 0
 }
 
 func main() {
-	reinitializePermutation(12)
+	reinitializePermutation(2)
 }

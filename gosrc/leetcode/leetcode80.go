@@ -48,6 +48,7 @@ func removeDuplicates(nums []int) int {
 	if len(nums) < 2 {
 		return len(nums)
 	}
+	// 不需要关注当前位置，只需要关注当前位置的前一个就好了
 	for r < len(nums) {
 		if nums[l-2] != nums[r] {
 			nums[l] = nums[r]
@@ -56,4 +57,23 @@ func removeDuplicates(nums []int) int {
 		r++
 	}
 	return l
+}
+
+/*
+*
+第二次做的 和第一次思路不太一样
+*/
+func removeDuplicates(nums []int) int {
+	if len(nums) <= 2 {
+		return len(nums)
+	}
+	low := 1
+	for fast := 2; fast < len(nums); fast++ {
+		if nums[low] != nums[low-1] || nums[fast] != nums[low] {
+			low++
+			nums[low] = nums[fast]
+		}
+	}
+
+	return low + 1
 }
