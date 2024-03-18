@@ -3,7 +3,6 @@ package main
 // 1178. 猜字谜
 import "math/bits"
 
-//
 func findNumOfValidWords(words []string, puzzles []string) []int {
 	const puzzleLength = 7
 	cnt := map[int]int{}

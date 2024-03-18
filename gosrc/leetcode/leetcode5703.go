@@ -57,7 +57,7 @@ func (this *nodeHeap) Pop() interface{} {
 	return temp
 }
 
-//  一个大根堆，每次存储好变化就行。 (b+1)/(a+1)-b/a 是变化量 每次将最大变化量存入堆中
+// 一个大根堆，每次存储好变化就行。 (b+1)/(a+1)-b/a 是变化量 每次将最大变化量存入堆中
 func maxAverageRatio(classes [][]int, extraStudents int) float64 {
 	prior := nodeHeap{}
 	heap.Init(&prior)

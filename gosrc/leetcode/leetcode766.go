@@ -1,7 +1,7 @@
 package main
 
-// 766. 托普利茨矩阵
-//  感觉思路是对的 但是边界有问题， 待优化
+//  766. 托普利茨矩阵
+//     感觉思路是对的 但是边界有问题， 待优化
 func isToeplitzMatrix(matrix [][]int) bool {
 	lena := len(matrix)
 	lenb := len(matrix[0])

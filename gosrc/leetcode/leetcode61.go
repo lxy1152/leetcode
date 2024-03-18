@@ -31,9 +31,7 @@ type ListNode struct {
 }
 
 /*
-
- 这道题可能是刚好能过leetcode的不太严格的数据， 也可能是因为自己写的代码确实不兼容k刚好等于长度的整数倍；。
-
+这道题可能是刚好能过leetcode的不太严格的数据， 也可能是因为自己写的代码确实不兼容k刚好等于长度的整数倍；。
 */
 func rotateRight(head *ListNode, k int) *ListNode {
 	p := head

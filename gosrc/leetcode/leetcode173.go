@@ -10,10 +10,7 @@ int next()将指针向右移动，然后返回指针处的数字。
 
 你可以假设 next() 调用总是有效的，也就是说，当调用 next() 时，BST 的中序遍历中至少存在一个下一个数字。
 
-
-
 示例：
-
 
 输入
 ["BSTIterator", "next", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"]
@@ -32,7 +29,6 @@ bSTIterator.next();    // 返回 15
 bSTIterator.hasNext(); // 返回 True
 bSTIterator.next();    // 返回 20
 bSTIterator.hasNext(); // 返回 False
-
 
 提示：
 
@@ -55,7 +51,7 @@ func Constructor(root *TreeNode) BSTIterator {
 	return BSTIterator{cur: root}
 }
 
-//  利用栈进行递归访问树的每一个节点。
+// 利用栈进行递归访问树的每一个节点。
 func (it *BSTIterator) Next() int {
 	for node := it.cur; node != nil; node = node.Left {
 		it.stack = append(it.stack, node)

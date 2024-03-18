@@ -2,7 +2,6 @@ package main
 
 // 978. 最长湍流子数组
 
-//
 func maxTurbulenceSize(arr []int) int {
 	n := len(arr)
 	ans := 1

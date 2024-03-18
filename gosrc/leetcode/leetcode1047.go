@@ -4,7 +4,7 @@ import "strings"
 
 //  1047. 删除字符串中的所有相邻重复项
 
-//  栈的考察
+// 栈的考察
 func removeDuplicates(S string) string {
 	stack := make([]string, 0)
 	for i := range S {

@@ -2,7 +2,7 @@ package main
 
 import "container/heap"
 
-//703. 数据流中的第 K 大元素
+// 703. 数据流中的第 K 大元素
 type intHeap1 []int
 
 func (h intHeap1) Len() int           { return len(h) }

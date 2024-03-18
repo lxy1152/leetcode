@@ -12,7 +12,6 @@ ruleKey == "type" 且 ruleValue == typei 。
 ruleKey == "color" 且 ruleValue == colori 。
 ruleKey == "name" 且 ruleValue == namei 。
 统计并返回 匹配检索规则的物品数量 。
-
 */
 func countMatches(items [][]string, ruleKey string, ruleValue string) int {
 	res := 0

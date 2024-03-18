@@ -7,8 +7,8 @@ type TreeNode struct {
 }
 
 /*
- 题目已经提示是一个二叉搜索树， 所以可以直接得出需要中序遍历的结果， 所以我们只需要中序+剪枝 就可以做到了，
- 如果 root.Val<low  那么他的左字数一定都小于low 不用去关注了， >high 的情况也同理。
+题目已经提示是一个二叉搜索树， 所以可以直接得出需要中序遍历的结果， 所以我们只需要中序+剪枝 就可以做到了，
+如果 root.Val<low  那么他的左字数一定都小于low 不用去关注了， >high 的情况也同理。
 */
 func trimBST(root *TreeNode, low int, high int) *TreeNode {
 

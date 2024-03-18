@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-//  解法1 超时！ 在第59个答案时超时  输入数据规模太大， 因为在我们每次遍历b-s>limit的时候都有可能去getNext中寻找。 这个函数包含了一个sort 最快的时间复杂度也是o nlogn 所以时间复杂度很高！
+// 解法1 超时！ 在第59个答案时超时  输入数据规模太大， 因为在我们每次遍历b-s>limit的时候都有可能去getNext中寻找。 这个函数包含了一个sort 最快的时间复杂度也是o nlogn 所以时间复杂度很高！
 func longestSubarray(nums []int, limit int) int {
 	leng := len(nums)
 	left, res := 0, 0

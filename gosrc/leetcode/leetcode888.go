@@ -5,7 +5,6 @@ import (
 )
 
 // 开始第一眼以为是前缀和技巧可以做的，但是仔细一看还是有一些区别的，直接能想到暴力解法，但是需要O(N2)的时间复杂度 不太合适
-//
 func fairCandySwap(A []int, B []int) []int {
 	suma := 0
 	sumb := 0

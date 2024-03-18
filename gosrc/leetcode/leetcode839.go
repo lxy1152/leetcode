@@ -10,8 +10,6 @@ package main
 
 给你一个字符串列表 strs。列表中的每个字符串都是 strs 中其它所有字符串的一个字母异位词。请问 strs 中有多少个相似字符串组？
 
-
-
 示例 1：
 
 输入：strs = ["tars","rats","arts","star"]
@@ -20,7 +18,6 @@ package main
 
 输入：strs = ["omv","ovm"]
 输出：1
-
 
 提示：
 
@@ -45,7 +42,7 @@ func _init_(n int) *unionFind {
 	return x1
 }
 
-//在并查集中查找
+// 在并查集中查找
 func (f *unionFind) find(x int) int {
 	if x != f.par[x] {
 		f.par[x] = f.find(f.par[x])

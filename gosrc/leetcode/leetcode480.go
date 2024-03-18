@@ -14,7 +14,7 @@ type intmaxHeap struct {
 	intHeap
 }
 
-//对顶堆的应用。
+// 对顶堆的应用。
 func (h intHeap) Len() int           { return len(h) }
 func (h intHeap) Less(i, j int) bool { return h[i] < h[j] }
 func (h intHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
